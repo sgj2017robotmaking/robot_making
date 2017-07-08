@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class childJointScript : MonoBehaviour {
-   
+
     Rigidbody2D jointrb2D;
 
     void Start()
@@ -14,12 +14,11 @@ public class childJointScript : MonoBehaviour {
     //Playerにhitしたら、親子化する
     void OnTriggerEnter2D(Collider2D col)
     {
-        
+
         if (col.gameObject.tag == "Player")
         {
             transform.SetParent(col.transform);
             Debug.Log("hit");
-            
         }
     }
 }

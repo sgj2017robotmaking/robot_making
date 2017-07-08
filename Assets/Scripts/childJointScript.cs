@@ -12,7 +12,7 @@ public class jointScript : MonoBehaviour
         jointrb2D = GetComponent<Rigidbody2D>();
     }
 
-    //Playerにhitしたら、親子化する
+    //buhinにhitしたら、親子化する
     void OnTriggerEnter2D(Collider2D col)
     {
 
@@ -20,7 +20,6 @@ public class jointScript : MonoBehaviour
         {
             transform.SetParent(col.transform);
             Debug.Log("hit");
-
         }
     }
 }
