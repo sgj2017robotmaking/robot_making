@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class MaincameraContoroller : MonoBehaviour {
 
-    private Transform target;
+    [SerializeField]
+    private GameObject player;
 	// Use this for initialization
 	void Start () {
-		target = GameObject.FindWithTag("Player").transform;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		transform.position = target.position + new Vector3(0, 1, -3);
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.position = new Vector3(player.transform.position.x, 11, -10);
+
+        if (transform.position.x < 4)
+        {
+            transform.position = new Vector3(4, 11, -10);
+        }
+
+        if (transform.position.x >= 300)
+        {
+            transform.position = new Vector3(300, 11, -10);
+        }
     }
 }
