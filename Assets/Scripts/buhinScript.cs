@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//buhinを管理するスクリプト
 public class buhinScript : MonoBehaviour
 {
     void Update()
