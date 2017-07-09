@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//buhinをPlayerの子にして、くっつけるスクリプト
 public class jointScript : MonoBehaviour {
 
     //Playerにhitしたら、親子化する
