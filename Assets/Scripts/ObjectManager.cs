@@ -10,9 +10,18 @@ public class ObjectManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
         LoadSpriteStudioObject("animation/Charactor01/Prefab/Charactor01");
-        //   ChangeAnimationSpriteStudioObject("anime_2");
+           ChangeAnimationSpriteStudioObject("wait");
         player_prefab.transform.localScale = new Vector3(0.005f, 0.005f, 1f);
+        player_prefab.transform.position = new Vector3(10, 20, 0);
 
+        // 子供のオブジェクトを探す
+        GameObject go_arm_l = player_prefab.transform.Find("part_1/body/arm_left02").gameObject;
+        go_arm_l.AddComponent<BoxCollider2D>();
+        go_arm_l.tag = "attachpoint";
+
+        GameObject go_arm_r = player_prefab.transform.Find("part_1/body/arm_right02").gameObject;
+        go_arm_r.AddComponent<BoxCollider2D>();
+        go_arm_r.tag = "attachpoint";
         //		LoadSpriteStudioObject("animation/character_template1/Prefab/character_template_3head");
         //		LoadSpriteStudioObject("animation/character_sample1/Prefab/character_template_3head",new Vector3(300,-300,0));
     }
@@ -28,7 +37,7 @@ public class ObjectManager : MonoBehaviour {
         }
         else
         {
-            // アニメーションを切り替えるテスト
+            // アニメーションを切り替える
             if (Input.GetKeyDown("1"))
             {
                 ChangeAnimationSpriteStudioObject("wait");
@@ -49,11 +58,11 @@ public class ObjectManager : MonoBehaviour {
             {
                 ChangeAnimationSpriteStudioObject("wait");
             }
-            else if (Input.GetKeyDown("4"))
+            else if (Input.GetKeyDown("a"))
             {
-                ChangeAnimationSpriteStudioObject("damage");
+                ChangeAnimationSpriteStudioObject("attack");
             }
-            else if (Input.GetKeyUp("4"))
+            else if (Input.GetKeyUp("a"))
             {
                 ChangeAnimationSpriteStudioObject("anime_1");
             }
@@ -75,6 +84,7 @@ public class ObjectManager : MonoBehaviour {
         }
         // 代入し直す
         transform.localScale = scale;
+        
     }
 
     // SpriteStudioのオブジェクトを読み込むサンプル
@@ -95,7 +105,7 @@ public class ObjectManager : MonoBehaviour {
   {
         if(player_ScriptRoot == null)
         {
-            Debug.Log("aa");
+            Debug.Log("animationkirikae");
             return;
         }
     player_ScriptRoot.AnimationPlay(player_ScriptRoot.IndexGetAnimation(animationName));

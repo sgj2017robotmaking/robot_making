@@ -8,7 +8,7 @@ public class AudioManagerScript : MonoBehaviour
     public AudioSource musicSource; //BGM用AudioSource
     public static AudioManagerScript instance = null;
     //音の高さにバリエーションを付ける用の変数
-    public float lowPitchRange = .95f;
+    public float lowPitchRange = 0.95f;
     public float highPitchRange = 1.05f;
 
 /*    //シングルトンの処理

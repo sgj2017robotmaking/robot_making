@@ -36,13 +36,13 @@ public class leaveScript : MonoBehaviour {
             if (Input.GetKey("a"))
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, step);
-                km.canMove = false; //プレイヤーの動きのコンポーネントをfalseにする。
+  //              km.canMove = false; //プレイヤーの動きのコンポーネントをfalseにする。
             }
         }
-        if (Input.GetKeyUp("a"))
-        {
-            km.canMove = true;  //プレイヤーの動きのコンポーネントをtrueにする。
-        }
+   //     if (Input.GetKeyUp("a"))
+  //      {
+   //         km.canMove = true;  //プレイヤーの動きのコンポーネントをtrueにする。
+   //     }
 
     }
 
@@ -53,6 +53,7 @@ public class leaveScript : MonoBehaviour {
             Debug.Log("!");
 
             this.gameObject.GetComponent<leaveScript>().enabled = false;
+
         }
 
     }

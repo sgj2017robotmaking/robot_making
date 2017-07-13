@@ -15,6 +15,6 @@ public class timeCtrlScript : MonoBehaviour {
     //「Invoke」で呼び出すメソッド
     void timeManagement()
     {
-        SceneManager.LoadScene("robot_making_test2");   //次のシーンの名前をお願いします。
+        SceneManager.LoadSceneAsync("robot_making_test2");   //次のシーンの名前をお願いします。
     }    
 }
